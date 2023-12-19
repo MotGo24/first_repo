@@ -1,12 +1,17 @@
 public class Main {
     public static void main(String[] args) {
-    System.out.println("Система расчета топлива");
+        System.out.println("Система расчета топлива");
 
     int fuelType = 95;
     int amount = 50;
+    var hasDiscount = true;
 
     double fuel92price = 60.2;
     double fuel95price = 67.33;
+
+    double discount = 0.1;
+
+    String wrongFuelTypeMessage = "Указан неверный тип топлива";
 
     double fuelPrice = 0;
     if (fuelType == 92) {
@@ -15,15 +20,20 @@ public class Main {
     else if (fuelType == 95) {
         fuelPrice = fuel95price;
     } else {
-        System.out.println("Указан неверный тип топлива");
-        amount = 0;
+        System.out.println(wrongFuelTypeMessage);
+    }
+
+    if(hasDiscount) {
+        fuelPrice = fuelPrice - (1 - discount) * fuelPrice;
     }
 
     if (amount < 1)   {
             System.out.println("Указано слишком малое количество топлива ");
         }
 
-    System.out.println("Цена выбранного топлива:" + fuelPrice + "руб.");
+    String fuelPriceMessage = "Цена выбранного топлива " + fuelPrice + "руб.";
+
+    System.out.println(fuelPriceMessage);
 
     double totalPrice = fuelPrice * amount;
         System.out.println("Общая стоимость заправки:" + totalPrice + "руб");
