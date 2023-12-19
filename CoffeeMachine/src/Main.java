@@ -10,26 +10,8 @@ public class Main {
         int CappucinoMilkRequired = 60;
         int CappucinoCoffeeRequired = 15;
 
-        boolean milkIsEnough = SkimmedMilkAmount >= CappucinoMilkRequired ||
-                MilkAmount >= CappucinoMilkRequired;
 
-        boolean coffeIsEnough = CoffeeAmount >= CappucinoMilkRequired;
 
-        boolean hasErrors = false;
 
-        if (IsBlocked) {
-            System.out.println("Кофе-машина заблокирована   ");
-             hasErrors = true;
-        }  if (!coffeIsEnough) {
-                System.out.println("Кофе недостаточно");
-                hasErrors = true;
-            } if (!milkIsEnough) {
-                System.out.println("Молока недостаточно");
-                hasErrors = true;
-            }
-
-        if (!hasErrors ) {
-            System.out.println("Готовим кофе");
         }
     }
-}
