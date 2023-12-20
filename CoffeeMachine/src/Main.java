@@ -5,14 +5,16 @@ public class Main {
         int milkAmount = 3210;
         int skimmedMilkAmount = 1290;
 
+        boolean isBlocked = true;
+
         int cappucinoMilkRequired = 60;
         int cappucinoCoffeeRequired = 15;
 
-        if (milkAmount >= cappucinoMilkRequired ||
-                skimmedMilkAmount >= cappucinoMilkRequired) {
-             System.out.println("Молока достаточно");
+        if (!isBlocked && milkAmount >= cappucinoMilkRequired &&
+                coffeeAmount >= cappucinoCoffeeRequired) {
+             System.out.println("готовим кофе");
         }  else {
-            System.out.println( " Молока  недостаточно :(");
+            System.out.println( "Что-то пошло не так (");
         }
         }
     }
